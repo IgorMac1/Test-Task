@@ -4,12 +4,12 @@
 <form action="" class="ui-form" method="post">
     <h3>Registration</h3>
     <div class="form-row">
-        <input name="email" type="text" id="email" value="<?php if (isset($_POST["email"])) echo $_POST["email"]; ?>"
+        <input name="email" type="email" id="email" value="<?php if (isset($_POST["email"])) echo $_POST["email"]; ?>"
                required autocomplete="off"><label for="email">Email</label>
     </div>
     <div class="form-row">
         <input name="login" type="text" id="login" value="<?php if (isset($_POST["login"])) echo $_POST["login"]; ?>"
-               required autocomplete="off"><label for="login">Login</label>
+               required autocomplete="off" maxlength="10" minlength="3"><label for="login">Login</label>
     </div>
     <div class="form-row">
         <input name="name" type="text" id="realName" value="<?php if (isset($_POST["name"])) echo $_POST["name"]; ?>"
@@ -17,8 +17,8 @@
             name</label>
     </div>
     <div class="form-row">
-        <input name="pass" type="password" id="password" required autocomplete="off"><label
-                for="password">Password</label>
+        <input name="pass" type="password" id="password" required autocomplete="off" maxlength="12" minlength="6"><label
+                for="password" >Password</label>
     </div>
     <div class="form-row">
         <input name="confirmPass" type="password" id="password" required autocomplete="off"><label for="password">Confirm
