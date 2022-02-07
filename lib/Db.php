@@ -18,6 +18,7 @@ class Db
             \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
         ];
         $this->db = new \PDO($config['dsn'], $config['user'], $config['pass'], $options);
+        debag($this->db);
     }
 
     public static function getInstance()
