@@ -3,7 +3,7 @@ RewriteEngine On
 RewriteRule ^images/([^/]+\.(jpe?g|gif|bmp|png))$ /public/images/$1 [L]
 RewriteRule ^css/([^/]+\.css)$ /public/css/$1 [L]
 
-RewriteCond %{REQUEST_FILENAME} !-fcd
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule (.*) index.php?$1 [L,QSA]heroku logs
+RewriteRule (.*) index.php?$1 [L,QSA]

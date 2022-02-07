@@ -33,13 +33,14 @@
     <div class="form-row">
         <select name="country" required>
             <?php
-            if(isset($_POST['country']) && $_POST['country'] != ''){
+            if (isset($_POST['country']) && $_POST['country'] != '') {
                 echo '<option value =\'' . $_POST['country'] . '\'>' . $_POST['country'] . '</option>';
-            }else{
+            } else {
                 echo '<option value="">choose your country</option>';
             }
             foreach ($country as $country) {
-                echo '<option value =\'' . $country['country'] . '\'>' . $country['country'] . '</option>';}
+                echo '<option value =\'' . $country['country'] . '\'>' . $country['country'] . '</option>';
+            }
             ?>
         </select>
     </div>
@@ -52,7 +53,3 @@
     <p><input type="submit" value="Confirm"></p>
     <p><input type="reset" value="Clear"></p>
 </form>
-<?php
-debag($_SESSION);
-echo '<hr>';
-debag($_POST);
