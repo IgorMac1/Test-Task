@@ -1,6 +1,6 @@
-#PHP registration form
+PHP registration form
 ***
-###To start the project you need to:
+To start the project you need to:
 1. Rename the __dbExample.php__ file in the __config__ folder to __db.php__.
 
 2. Create a database, or use yours.

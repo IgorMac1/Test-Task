@@ -11,12 +11,12 @@ class Account extends Model
     {
         $registerDate = time();
         $params = [
-            'email' => strtolower($data['email']),
-            'login' => strtolower($data['login']),
-            'name' => strtolower($data['name']),
-            'pass' => md5($data['pass']),
-            'birthday' => strtolower($data['birthday']),
-            'country' => strtolower($data['country']),
+            'email' => htmlspecialchars(strtolower($data['email'])),
+            'login' => htmlspecialchars(strtolower($data['login'])),
+            'name' => htmlspecialchars(strtolower($data['name'])),
+            'pass' => htmlspecialchars(md5($data['pass'])),
+            'birthday' => htmlspecialchars(strtolower($data['birthday'])),
+            'country' => htmlspecialchars(strtolower($data['country'])),
             'date' => $registerDate
         ];
         $this->db->query(
@@ -27,8 +27,8 @@ class Account extends Model
     public function getUser($email, $pass)
     {
         $params = [
-            'email' => strtolower($email),
-            'pass' => md5($pass),
+            'email' => htmlspecialchars(strtolower($email)),
+            'pass' => htmlspecialchars(md5($pass)),
 
         ];
         return $this->db->row("SELECT id, name, email FROM users WHERE email = :email AND pass = :pass OR login = :email AND pass = :pass", $params);
