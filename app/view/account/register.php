@@ -5,28 +5,28 @@
     <h3>Registration</h3>
     <div class="form-row">
         <input name="email" type="email" id="email" value="<?php if (isset($_POST["email"])) echo $_POST["email"]; ?>"
-               required autocomplete="off"><label for="email">Email</label>
+               ><label for="email">Email</label>
     </div>
     <div class="form-row">
         <input name="login" type="text" id="login" value="<?php if (isset($_POST["login"])) echo $_POST["login"]; ?>"
-               required autocomplete="off" maxlength="10" minlength="3"><label for="login">Login</label>
+                maxlength="10" minlength="3"><label for="login">Login</label>
     </div>
     <div class="form-row">
         <input name="name" type="text" id="realName" value="<?php if (isset($_POST["name"])) echo $_POST["name"]; ?>"
-               required autocomplete="off"><label for="realName">Real
+               ><label for="realName">Real
             name</label>
     </div>
     <div class="form-row">
-        <input name="pass" type="password" id="password" required autocomplete="off" maxlength="12" minlength="6"><label
+        <input name="pass" type="password" id="password"  maxlength="12" minlength="6"><label
                 for="password" >Password</label>
     </div>
     <div class="form-row">
-        <input name="confirmPass" type="password" id="password" required autocomplete="off"><label for="password">Confirm
+        <input name="confirmPass" type="password" id="password" ><label for="password">Confirm
             password</label>
     </div>
     <div class="form-row">
         <input name="birthday" type="date" id="birthDate"
-               value="<?php if (isset($_POST["birthday"])) echo $_POST["birthday"]; ?>" required autocomplete="off"
+               value="<?php if (isset($_POST["birthday"])) echo $_POST["birthday"]; ?>"
                min="1900-01-01" max='<?= date("Y-m-d") ?>'>
         <label for="birthDate">Birth date</label>
     </div>
