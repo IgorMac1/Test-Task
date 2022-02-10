@@ -5,7 +5,7 @@
     <h3>Registration</h3>
     <div class="form-row">
         <input name="email" type="email" id="email" value="<?php if (isset($_POST["email"])) echo $_POST["email"]; ?>"
-               ><label for="email">Email</label>
+               maxlength="60" ><label for="email">Email</label>
     </div>
     <div class="form-row">
         <input name="login" type="text" id="login" value="<?php if (isset($_POST["login"])) echo $_POST["login"]; ?>"
