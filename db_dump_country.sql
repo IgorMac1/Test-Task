@@ -4,7 +4,7 @@ CREATE TABLE `country` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
-INSERT INTO `country` VALUES (1,'Canada'),(2,'Ukrain'),(3,'Italy'),(4,'Spain'),(5,'USA');
+INSERT INTO `country` VALUES (1,'Canada'),(2,'Ukraine'),(3,'Italy'),(4,'Spain'),(5,'USA');
 
 
 
