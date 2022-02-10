@@ -13,7 +13,7 @@
     </div>
     <div class="form-row">
         <input name="name" type="text" id="realName" value="<?php if (isset($_POST["name"])) echo $_POST["name"]; ?>"
-               ><label for="realName">Real
+               maxlength="45" ><label for="realName">Real
             name</label>
     </div>
     <div class="form-row">
@@ -21,7 +21,7 @@
                 for="password" >Password</label>
     </div>
     <div class="form-row">
-        <input name="confirmPass" type="password" id="password" ><label for="password">Confirm
+        <input name="confirmPass" type="password" id="password" maxlength="12" minlength="6"><label for="password">Confirm
             password</label>
     </div>
     <div class="form-row">
