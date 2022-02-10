@@ -13,7 +13,7 @@
     </div>
     <div class="form-row">
         <input name="name" type="text" id="realName" value="<?php if (isset($_POST["name"])) echo $_POST["name"]; ?>"
-               maxlength="45" ><label for="realName">Real
+               maxlength="30" ><label for="realName">Real
             name</label>
     </div>
     <div class="form-row">
