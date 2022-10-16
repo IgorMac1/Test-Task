@@ -9,9 +9,17 @@ class Router
 
     function __construct()
     {
-        $arr = require 'config/rotes.php';
-        foreach ($arr as $key => $val) {
-            $this->add($key, $val);
+        if (strpos($_SERVER['REQUEST_URI'], '/api/') === 0) {
+            $routes = require 'config/routes/api.php';
+            foreach ($routes as $key => $val) {
+                $this->add('api/' . $key, $val);
+            }
+            // check request method
+        } else {
+            $routes = require 'config/routes/web.php';
+            foreach ($routes as $key => $val) {
+                $this->add($key, $val);
+            }
         }
     }
 
@@ -43,14 +51,11 @@ class Router
                 if (method_exists($path, $action)) {
                     $controller = new $path($this->params);
                     $controller->$action();
-                } else {
-                    View::errorCode(404);
+                    return;
                 }
-            } else {
-                View::errorCode(404);
             }
-        } else {
-            View::errorCode(404);
         }
+
+        header('Location: /') ;
     }
 }

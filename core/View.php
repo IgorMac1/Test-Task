@@ -6,7 +6,7 @@ class View
 {
     public $path;
     public $route;
-    public $layout = 'default';
+//    public $layout = 'default';
 
     public function __construct($route)
     {
@@ -14,16 +14,17 @@ class View
         $this->path = $route['controller'] . '/' . $route['action'];
     }
 
-    public function render($title, $vars = [])
+    public function render($template, $vars = [])
     {
         extract($vars);
-        if (file_exists('app/view/' . $this->path . '.php')) {
-            ob_start();
-            require 'app/view/' . $this->path . '.php';
-            $content = ob_get_clean();
-            require 'app/view/layout/' . $this->layout . '.php';
+        if (file_exists('app/view/' . $template . '.php')) {
+//            ob_start();
+            require 'app/view/' . $template . '.php';
+//            $content = ob_get_clean();
+
+//            require 'app/view/main/' . $this->layout . '.php';
         } else {
-            echo 'вид не найден';
+            echo 'view not found';
         }
     }
 

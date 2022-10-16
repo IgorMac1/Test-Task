@@ -4,7 +4,7 @@ namespace app\model;
 
 use core\Model;
 
-class Account extends Model
+class User extends Model
 {
 
     public function addNewUser(array $data): void
@@ -22,6 +22,9 @@ class Account extends Model
         $this->db->query(
             "INSERT INTO users (email,login,name,pass,birthday,country,date) VALUES (:email,:login,:name,:pass,:birthday,:country,:date)", $params
         );
+
+        // return newly created row
+        return;
     }
 
     public function getUser($email, $pass)
@@ -34,10 +37,11 @@ class Account extends Model
         return $this->db->row("SELECT id, name, email FROM users WHERE email = :email AND pass = :pass OR login = :email AND pass = :pass", $params);
     }
 
-    public function getCountry()
+    public function getAllUsers()
     {
-        $countryArr = $this->db->getAllRows('SELECT * FROM country');
-        return $countryArr;
+        return  $this->db->getAllRows('SELECT * FROM users');
+//            $this->db->getAllRows('SELECT * FROM users');
+
     }
 
     public function checkUniqueEmail($email)
